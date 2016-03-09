@@ -1,0 +1,72 @@
+
+Y00 = @(theta, phi)1/(2*sqrt(pi));
+Y2_2 = @(theta, phi)1/4*sqrt(15/(2*pi))*sin(theta)^2*exp(-2*1i*phi);
+Y2_1 = @(theta, phi)1/2*sqrt(15/(2*pi))*sin(theta)*cos(theta)*exp(-1i*phi);
+Y20 = @(theta, phi)1/4*sqrt(5/pi)*(3*cos(theta)^2 - 1);
+Y21 = @(theta, phi)-1/2*sqrt(15/(2*pi))*sin(theta)*cos(theta)*exp(1i*phi);
+Y22 = @(theta, phi)1/4*sqrt(15/(2*pi))*sin(theta)^2*exp(2*1i*phi);
+Y4_4 = @(theta, phi)3/16*exp(-4*1i*phi)*sqrt(35/(2*pi))*sin(theta)^4;
+Y4_3 = @(theta, phi)3/8*exp(-3*1i*phi)*sqrt(35/pi)*cos(theta)*sin(theta)^3;
+Y4_2 = @(theta, phi)3/8*exp(-2*1i*phi)*sqrt(5/(2*pi))*(-1 + 7*cos(theta)^2)*sin(theta)^2;
+Y4_1 = @(theta, phi)3/8*exp(-1i*phi)*sqrt(5/pi)*cos(theta)*(-3 + 7*cos(theta)^2)*sin(theta);
+Y40 = @(theta, phi)3*(3 - 30*cos(theta)^2 + 35*cos(theta)^4)/16/sqrt(pi);
+Y41 = @(theta, phi)-3/8*exp(1i*phi)*sqrt(5/pi)*cos(theta)*(-3 + 7*cos(theta)^2)*sin(theta);
+Y42 = @(theta, phi)3/8*exp(2*1i*phi)*sqrt(5/(2*pi))*(-1 + 7*cos(theta)^2)*sin(theta)^2;
+Y43 = @(theta, phi)-3/8*exp(3*1i*phi)*sqrt(35/pi)*cos(theta)*sin(theta)^3;
+Y44 = @(theta, phi)3/16*exp(4*1i*phi)*sqrt(35/(2*pi))*sin(theta)^4;
+Y6_6 = @(theta, phi)1/64*exp(-6*1i*phi)*sqrt(3003/pi)*sin(theta)^6;
+Y6_5 = @(theta, phi)3/32*exp(-5*1i*phi)*sqrt(1001/pi)*cos(theta)*sin(theta)^5;
+Y6_4 = @(theta, phi)3/32*exp(-4*1i*phi)*sqrt(91/(2*pi))*(-1 + 11*cos(theta)^2)*sin(theta)^4;
+Y6_3 = @(theta, phi)1/32*exp(-3*1i*phi)*sqrt(1365/pi)*cos(theta)*(-3 + 11*cos(theta)^2)*sin(theta)^3;
+Y6_2 = @(theta, phi)1/64*exp(-2*1i*phi)*sqrt(1365/pi)*(1 - 18*cos(theta)^2 + 33*cos(theta)^4)*sin(theta)^2;
+Y6_1 = @(theta, phi)1/16*exp(-1i*phi)*sqrt(273/(2*pi))*cos(theta)*(5 - 30*cos(theta)^2 + 33*cos(theta)^4)*sin(theta);
+Y60 = @(theta, phi)1/32*sqrt(13/pi)*(-5 + 105*cos(theta)^2 - 315*cos(theta)^4 + 231*cos(theta)^6);
+Y61 = @(theta, phi)-1/16*exp(1i*phi)*sqrt(273/(2*pi))*cos(theta)*(5 - 30*cos(theta)^2 + 33*cos(theta)^4)*sin(theta);
+Y62 = @(theta, phi)1/64*exp(2*1i*phi)*sqrt(1365/pi)*(1 - 18*cos(theta)^2 + 33*cos(theta)^4)*sin(theta)^2;
+Y63 = @(theta, phi)-1/32*exp(3*1i*phi)*sqrt(1365/pi)*cos(theta)*(-3 + 11*cos(theta)^2)*sin(theta)^3;
+Y64 = @(theta, phi)3/32*exp(4*1i*phi)*sqrt(91/(2*pi))*(-1 + 11*cos(theta)^2)*sin(theta)^4;
+Y65 = @(theta, phi)-3/32*exp(5*1i*phi)*sqrt(1001/pi)*cos(theta)*sin(theta)^5;
+Y66 = @(theta, phi)1/64*exp(6*1i*phi)*sqrt(3003/pi)*sin(theta)^6;
+Y8_8 = @(theta, phi)3/256*exp(-8*1i*phi)*sqrt(12155/(2*pi))*sin(theta)^8;
+Y8_7 = @(theta, phi)3/64*exp(-7*1i*phi)*sqrt(12155/(2*pi))*cos(theta)*sin(theta)^7;
+Y8_6 = @(theta, phi)1/128*exp(-6*1i*phi)*sqrt(7293/pi)*(-1 + 15*cos(theta)^2)*sin(theta)^6;
+Y8_5 = @(theta, phi)3/64*exp(-5*1i*phi)*sqrt(17017/(2*pi))*cos(theta)*(-1 + 5*cos(theta)^2)*sin(theta)^5;
+Y8_4 = @(theta, phi)3/128*exp(-4*1i*phi)*sqrt(1309/(2*pi))*(1 - 26*cos(theta)^2 + 65*cos(theta)^4)*sin(theta)^4;
+Y8_3 = @(theta, phi)1/64*exp(-3*1i*phi)*sqrt(19635/(2*pi))*cos(theta)*(3 - 26*cos(theta)^2 + 39*cos(theta)^4)*sin(theta)^3;
+Y8_2 = @(theta, phi)3/128*exp(-2*1i*phi)*sqrt(595/pi)*(-1 + 33*cos(theta)^2 - 143*cos(theta)^4 + 143*cos(theta)^6)*sin(theta)^2;
+Y8_1 = @(theta, phi)3/64*exp(-1i*phi)*sqrt(17/(2*pi))*cos(theta)*(-35 + 385*cos(theta)^2 - 1001*cos(theta)^4 + 715*cos(theta)^6)*sin(theta);
+Y80 = @(theta, phi)1/256*sqrt(17/pi)*(35 - 1260*cos(theta)^2 + 6930*cos(theta)^4 - 12012*cos(theta)^6 + 6435*cos(theta)^8);
+Y81 = @(theta, phi)-3/64*exp(1i*phi)*sqrt(17/(2*pi))*cos(theta)*(-35 + 385*cos(theta)^2 - 1001*cos(theta)^4 + 715*cos(theta)^6)*sin(theta);
+Y82 = @(theta, phi)3/128*exp(2*1i*phi)*sqrt(595/pi)*(-1 + 33*cos(theta)^2 - 143*cos(theta)^4 + 143*cos(theta)^6)*sin(theta)^2;
+Y83 = @(theta, phi)-1/64*exp(3*1i*phi)*sqrt(19635/(2*pi))*cos(theta)*(3 - 26*cos(theta)^2 + 39*cos(theta)^4)*sin(theta)^3;
+Y84 = @(theta, phi)3/128*exp(4*1i*phi)*sqrt(1309/(2*pi))*(1 - 26*cos(theta)^2 + 65*cos(theta)^4)*sin(theta)^4;
+Y85 = @(theta, phi)-3/64*exp(5*1i*phi)*sqrt(17017/(2*pi))*cos(theta)*(-1 + 5*cos(theta)^2)*sin(theta)^5;
+Y86 = @(theta, phi)1/128*exp(6*1i*phi)*sqrt(7293/pi)*(-1 + 15*cos(theta)^2)*sin(theta)^6;
+Y87 = @(theta, phi)-3/64*exp(7*1i*phi)*sqrt(12155/(2*pi))*cos(theta)*sin(theta)^7;
+Y88 = @(theta, phi)3/256*exp(8*1i*phi)*sqrt(12155/(2*pi))*sin(theta)^8;
+Y10_10 = @(theta, phi)1/1024*exp(-10*1i*phi)*sqrt(969969/pi)*sin(theta)^10;
+Y10_9 = @(theta, phi)1/512*exp(-9*1i*phi)*sqrt(4849845/pi)*cos(theta)*sin(theta)^9;
+Y10_8 = @(theta, phi)1/512*exp(-8*1i*phi)*sqrt(255255/(2*pi))*(-1 + 19*cos(theta)^2)*sin(theta)^8;
+Y10_7 = @(theta, phi)3/512*exp(-7*1i*phi)*sqrt(85085/pi)*cos(theta)*(-3 + 19*cos(theta)^2)*sin(theta)^7;
+Y10_6 = @(theta, phi)3/1024*exp(-6*1i*phi)*sqrt(5005/pi)*(3 - 102*cos(theta)^2 + 323*cos(theta)^4)*sin(theta)^6;
+Y10_5 = @(theta, phi)3/256*exp(-5*1i*phi)*sqrt(1001/pi)*cos(theta)*(15 - 170*cos(theta)^2 + 323*cos(theta)^4)*sin(theta)^5;
+Y10_4 = @(theta, phi)3/256*exp(-4*1i*phi)*sqrt(5005/(2*pi))*(-1 + 45*cos(theta)^2 - 255*cos(theta)^4 + 323*cos(theta)^6)*sin(theta)^4;
+Y10_3 = @(theta, phi)3/256*exp(-3*1i*phi)*sqrt(5005/pi)*cos(theta)*(-7 + 105*cos(theta)^2 - 357*cos(theta)^4 + 323*cos(theta)^6)*sin(theta)^3;
+Y10_2 = @(theta, phi)3/512*exp(-2*1i*phi)*sqrt(385/(2*pi))*(7 - 364*cos(theta)^2 + 2730*cos(theta)^4 - 6188*cos(theta)^6 + 4199*cos(theta)^8)*sin(theta)^2;
+Y10_1 = @(theta, phi)1/256*exp(-1i*phi)*sqrt(1155/(2*pi))*cos(theta)*(63 - 1092*cos(theta)^2 + 4914*cos(theta)^4 - 7956*cos(theta)^6 + 4199*cos(theta)^8)*sin(theta);
+Y100 = @(theta, phi)1/512*sqrt(21/pi)*(-63 + 3465*cos(theta)^2 - 30030*cos(theta)^4 + 90090*cos(theta)^6 - 109395*cos(theta)^8 + 46189*cos(theta)^10);
+Y101 = @(theta, phi)-1/256*exp(1i*phi)*sqrt(1155/(2*pi))*cos(theta)*(63 - 1092*cos(theta)^2 + 4914*cos(theta)^4 - 7956*cos(theta)^6 + 4199*cos(theta)^8)*sin(theta);
+Y102 = @(theta, phi)3/512*exp(2*1i*phi)*sqrt(385/(2*pi))*(7 - 364*cos(theta)^2 + 2730*cos(theta)^4 - 6188*cos(theta)^6 + 4199*cos(theta)^8)*sin(theta)^2;
+Y103 = @(theta, phi)-3/256*exp(3*1i*phi)*sqrt(5005/pi)*cos(theta)*(-7 + 105*cos(theta)^2 - 357*cos(theta)^4 + 323*cos(theta)^6)*sin(theta)^3;
+Y104 = @(theta, phi)3/256*exp(4*1i*phi)*sqrt(5005/(2*pi))*(-1 + 45*cos(theta)^2 - 255*cos(theta)^4 + 323*cos(theta)^6)*sin(theta)^4;
+Y105 = @(theta, phi)-3/256*exp(5*1i*phi)*sqrt(1001/pi)*cos(theta)*(15 - 170*cos(theta)^2 + 323*cos(theta)^4)*sin(theta)^5;
+Y106 = @(theta, phi)3/1024*exp(6*1i*phi)*sqrt(5005/pi)*(3 - 102*cos(theta)^2 + 323*cos(theta)^4)*sin(theta)^6;
+Y107 = @(theta, phi)-3/512*exp(7*1i*phi)*sqrt(85085/pi)*cos(theta)*(-3 + 19*cos(theta)^2)*sin(theta)^7;
+Y108 = @(theta, phi)1/512*exp(8*1i*phi)*sqrt(255255/(2*pi))*(-1 + 19*cos(theta)^2)*sin(theta)^8;
+Y109 = @(theta, phi)-1/512*exp(9*1i*phi)*sqrt(4849845/pi)*cos(theta)*sin(theta)^9;
+Y1010 = @(theta, phi)1/1024*exp(10*1i*phi)*sqrt(969969/pi)*sin(theta)^10;
+
+
+
+
+
