@@ -13,6 +13,12 @@ x = orient_array(1, :)';
 y = orient_array(2, :)';
 z = orient_array(3, :)';
 
+% delete non-dwi direction
+del_ele = sqrt(x.^2 + y.^2 + z.^2); 
+x(del_ele == 0) = [];
+y(del_ele == 0) = [];
+z(del_ele == 0) = [];
+
 [theta, phi] = cart2sph(x, y, z);
 
 phi = pi/2 - phi;

@@ -15,7 +15,7 @@ for aa = 1:size(Ori, 1)
 end
 
 dd = 1;
-for bb = 1:size(deg)
+for bb = 1:numel(deg)
     l = deg(bb);
     for cc = l^2 :l^2 + 2*l
         X(:, cc + 1) = temp(:, dd);
