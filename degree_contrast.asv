@@ -6,10 +6,6 @@ l2 = double(max(solve((l + 1)^2 == numel(C2), l)));
 p1 = (l1 + 1)*(l1/2 + 1);
 p2 = (l2 + 1)*(l2/2 + 1);
 
-del_idx1 = SimMatrix(C1);
-del_idx2 = SimMatrix(C2);
-C1(del_idx1) = [];
-C2(del_idx2) = [];
 
 Ycell = SH_mat_matrix;
 Ycell_C1 = Ycell(1:numel(C1));
@@ -35,4 +31,13 @@ for aa = 1:numel(Val)
     SumVal = SumVal + Val{aa}*C(aa);
 end
 
+function add_array = SimMatrix(C)
+syms l
+l1 = double(max(solve((l + 1)^2 == numel(C), l)));
+add_array = [];
+if l1 > 0
+    for bb = 2:2:l1
+        add_array = [add_array, ((bb - 1)^2 + 1):bb^2];
+    end
+end
     

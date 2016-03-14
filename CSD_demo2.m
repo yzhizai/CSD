@@ -15,14 +15,14 @@ z = diff_ori(:,3);
 Ori = [Theta, pi/2 - Phi];
 X = getComplexMatrix(Ori, 10);
 
-X0 = X(:, 1:25);
-M0 = (conj(X0)'*X0)*conj(X0)';
+X0 = X(:,1:9);
+M0 = pinv(X0'*X0)*X0';
 C0 = M0*F;
-
-for aa = 2:2:10
-    Xaa = X(:, 1:(aa + 1)^2);
-    Maa = (conj(Xaa)'*Xaa)*conj(Xaa)';
-    Caa = Maa*F;
-    FVal = degree_contrast(C0, Caa);
-    C0 = Caa;
-end
+% 
+% for aa = 2:2:10
+%     Xaa = X(:, 1:(aa + 1)^2);
+%     Maa = pinv(Xaa'*Xaa)*Xaa';
+%     Caa = Maa*F;
+%     FVal = degree_contrast(C0, Caa, 60)
+%     C0 = Caa;
+% end
