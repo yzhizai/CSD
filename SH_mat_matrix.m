@@ -1,4 +1,7 @@
-function Ycell = SH_mat
+function Ycell = SH_mat_matrix
+%SH_MAT_MATRIX is the matrix edition of SH_mat.m, which can offer the
+%matrix arguments. It will replace the SH_mat.m in the future, for it can
+%complete the former work, and more useful.
 Y00 = @(theta, phi)complex(1./(2.*sqrt(pi))*ones(size(theta)));
 Y2_2 = @(theta, phi)1./4.*sqrt(15./(2.*pi)).*sin(theta).^2.*exp(-2.*1i.*phi);
 Y2_1 = @(theta, phi)1./2.*sqrt(15./(2.*pi)).*sin(theta).*cos(theta).*exp(-1i.*phi);

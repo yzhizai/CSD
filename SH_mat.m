@@ -1,4 +1,6 @@
 function Ycell = SH_mat
+%SH_MAT offer 10 degree spherical harmonics, when we need more we can add
+%more funcions.This function will be aborded in the future.
 Y00 = @(theta, phi)1/(2*sqrt(pi));
 Y2_2 = @(theta, phi)1/4*sqrt(15/(2*pi))*sin(theta)^2*exp(-2*1i*phi);
 Y2_1 = @(theta, phi)1/2*sqrt(15/(2*pi))*sin(theta)*cos(theta)*exp(-1i*phi);
