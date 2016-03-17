@@ -18,6 +18,10 @@ for aa = 2:2:10
     Caa = Maa*F;
     FVal = degree_contrast(C0, Caa, F, Ori);
     if FVal < 3
+        if aa == 10
+            C = 0;
+            Order = 0;
+        end
         C0 = Caa;
     else
         Order = aa; 
