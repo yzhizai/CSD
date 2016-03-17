@@ -2,16 +2,6 @@ clear variables
 close all
 
 
-filenames = spm_select(1, '.img');
-filenames = cellstr(filenames);
-coordinates = [51, 55, 16];
-Y = spm_read_vols(spm_vol(filenames{1}));
-sample_vox = Y(66, 47, 17, :);
-sample_vox = reshape(sample_vox, numel(sample_vox), 1);
-RealADC = getRealADC(1000, sample_vox);
-RealADC([1, 22, 43, 64]) = []; 
-F = RealADC;
-
 OriFileName = spm_select(1, 'any');
 OriFileName = cellstr(OriFileName);
 Ori_cart = load(OriFileName{1});
@@ -31,15 +21,16 @@ z(del_ele == 0) = [];
 Ori = [Theta, pi/2 - Phi];
 X = getComplexMatrix(Ori, 10);
 
-X0 = X(:, 1:25);
-M0 = pinv(X0'*X0)*X0';
-C0 = M0*F;
-% N = numel(sample_vox);
-% for aa = 2:2:10
-%     Xaa = X(:, 1:(aa + 1)^2);
-%     Maa = pinv(Xaa'*Xaa)*Xaa';
-%     Caa = Maa*F;
-%     FVal = degree_contrast(C0, Caa, N)
-%     C0 = Caa;
-% end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+filenames = spm_select(1, '.img');
+filenames = cellstr(filenames);
+coordinates = [51, 55, 16];
+Y = spm_read_vols(spm_vol(filenames{1}));
+sample_vox = Y(66, 47, 17, :);
+sample_vox = reshape(sample_vox, numel(sample_vox), 1);
+RealADC = getRealADC(1000, sample_vox);
+RealADC([1, 22, 43, 64]) = []; 
+F = RealADC;
+
+[C, Order] = order_select(X, F, Ori);
 
