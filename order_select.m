@@ -9,6 +9,11 @@ function [C, Order] = order_select(X, F, Ori)
 %Output:
 %  Order - the selected order
 %  C - the fitted coefficient
+%
+%IHEP
+%Shaofeng Duan
+%2016-03-21
+
 X0 = X(:, 1);
 M0 = pinv(X0'*X0)*X0';
 C0 = M0*F;
