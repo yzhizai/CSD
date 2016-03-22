@@ -18,7 +18,7 @@ z(del_ele == 0) = [];
 %-----------------------------------------
 
 [Phi, Theta, R] = cart2sph(x, y, z);
-Ori = [pi/2 - Theta, Phi];
+Ori = [Theta, pi/2 - Phi];
 X = getComplexMatrix(Ori, 10);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,9 +32,9 @@ RealADC([1, 22, 43, 64]) = [];
 F = RealADC;
 
 [C, Order] = order_select(X, F, Ori);
+del_idx1 = SimMatrix(C);
+C(del_idx1) = [];
 
-F = [F; F];
-Ori = [Ori; [pi - Ori(:, 1), pi + Ori(:, 2)];
 save('exchange.mat', 'C', 'F', 'Ori');
 %----------------------------------------------------------------
 scaF = scatteredInterpolant(Ori(:, 1), Ori(:, 2), F);

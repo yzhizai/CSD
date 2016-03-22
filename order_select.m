@@ -23,8 +23,8 @@ for aa = 2:2:10
     Xaa = X(:, 1:(aa + 1)^2);
     Maa = pinv(Xaa'*Xaa)*Xaa';
     Caa = Maa*F;
-    FVal = degree_contrast(C0, Caa, F, Ori);
-    if FVal < 3
+    FVal = abs(degree_contrast(C0, Caa, F, Ori))
+    if FVal < 50
         if aa == 10
             C = 0;
             Order = 0;
@@ -36,6 +36,9 @@ for aa = 2:2:10
         break;
     end
 end
+del_idx1 = SimMatrix(C);
+C(del_idx1) = [];
+
 
 function FVal = degree_contrast(C1, C2, RealVal, Ori)
 %DEGREE_CONTRAST - is used to caculate the difference between two model.

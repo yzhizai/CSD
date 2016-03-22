@@ -13,8 +13,8 @@ y(del_ele == 0) = [];
 z(del_ele == 0) = [];
 %-----------------------------------------
 
-[Theta, Phi, R] = cart2sph(x, y, z);
-Ori = [Theta, pi/2 - Phi];
+[Phi, Theta, R] = cart2sph(x, y, z);
+Ori = [pi/2 - Theta, Phi];
 X = getComplexMatrix(Ori, 10);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
