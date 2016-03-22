@@ -1,6 +1,8 @@
 function [C, Order] = order_select(X, F, Ori)
 %ORDER_SELECT - used to deduce the order of the fitted spherical harmonics
 %
+%Usage:[C, Order] = ORDER_SELECT(X, F, Ori)
+%
 %Input:
 %  X - the complex matrix
 %  F - the observed ADC profile
