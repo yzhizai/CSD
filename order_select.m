@@ -1,7 +1,8 @@
 function [C, Order] = order_select(X, F, Ori)
 %ORDER_SELECT - used to deduce the order of the fitted spherical harmonics
 %
-%Usage:[C, Order] = ORDER_SELECT(X, F, Ori)
+%Usage1:[C, Order] = ORDER_SELECT(X, F, Ori);
+%Usage2:[C, Order] = ORDER_SELECT(X, F, Order);
 %
 %Input:
 %  X - the complex matrix
@@ -16,6 +17,15 @@ function [C, Order] = order_select(X, F, Ori)
 %Shaofeng Duan
 %2016-03-21
 
+if size(Ori, 1) == 1
+    Order = Ori;
+    Xaa = X(:, 1:(Order + 1)^2);
+    Maa = pinv(Xaa'*Xaa)*Xaa';
+    C = Maa*F;
+    del_idx1 = SimMatrix(C);
+    C(del_idx1) = [];
+    return;
+end
 X0 = X(:, 1);
 M0 = pinv(X0'*X0)*X0';
 C0 = M0*F;
@@ -23,7 +33,7 @@ for aa = 2:2:10
     Xaa = X(:, 1:(aa + 1)^2);
     Maa = pinv(Xaa'*Xaa)*Xaa';
     Caa = Maa*F;
-    FVal = abs(degree_contrast(C0, Caa, F, Ori))
+    FVal = abs(degree_contrast(C0, Caa, F, Ori));
     if FVal < 50
         if aa == 10
             C = 0;
