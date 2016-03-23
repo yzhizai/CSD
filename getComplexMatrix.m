@@ -2,6 +2,8 @@ function X = getComplexMatrix(Ori, lmax)
 %GETCOMPLEXMATRIX is the function used to get the complex matrix consisted
 %of the SH series. Now it is limited by 10, merely lmax = 0:2:10;
 %
+%Usage: X = GETCOMPLEXMATRIX(Ori, lmax)
+%
 %Input:
 %  Ori - must be the spherical coordinates,[Theta, Phi].
 %  lmax - the maximum degree you limited to model the ADC profile.

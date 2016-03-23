@@ -13,7 +13,7 @@ z = diff_ori(:,3);
 
 [Phi, Theta, R] = cart2sph(x, y, z);
 Ori = [pi/2 - Theta, Phi];
-X = getComplexMatrix(Ori, 10);
-
-[C, order] = order_select(X, F, 10);
+Q = getQMatrix(Ori, 10);
+M = pinv(Q'*Q)*Q';
+C = M*F;
 save('exchange.mat', 'C', 'F', 'Ori');
