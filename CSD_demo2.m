@@ -1,4 +1,4 @@
-D = diag([0.2, 0.2, 1.7])*10^-3;
+D = diag([0.25, 0.25, 1])*10^-3;
 diff_ori = load('Grad_dirs_60.txt');
 F = zeros(size(diff_ori, 1), 1);
 for aa = 1:size(diff_ori, 1)
