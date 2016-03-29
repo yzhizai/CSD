@@ -12,9 +12,9 @@ filename2 = 'Grad_dirs_300.txt';
 P = getMatrixForSample(filename2);
 M = pinv(Q'*Q)*Q';
 S = M*F;
-C0 = CSD_demo6;
+S(1) = 0;
 
-R = getResponse(C0, 10);
+R = diag([repmat(8/3, 1, 1), repmat(8, 1, 5), zeros(0, 1, 60)])*10^-4;
 f0 = pinv(R'*R + 1)*R'*S;
 
 A = Q*R; 
@@ -35,4 +35,4 @@ while sum(sum((L1 - L0).^2)) ~= 0
 end
 C = fi;
 
-save('exchange.mat', 'C');
+save('exchange.mat', 'S');

@@ -13,7 +13,7 @@ y = diff_ori(:,2);
 z = diff_ori(:,3);
 
 [Phi, Theta, ~] = cart2sph(x, y, z);
-Ori = [Theta, Phi];
+Ori = [pi/2 - Theta, Phi];
 Q = getQMatrix(Ori, 10);
 
 varargout{1} = Q;
