@@ -1,0 +1,8 @@
+Gamma = 1000*(1.7 - 0.2)*10^-3;
+
+filename1 = 'Grad_dirs_60.txt';
+filename2 = 'Grad_dirs_300.txt';
+
+A = getResponseMatrix(filename1, filename2, Gamma);
+
+[]
